@@ -1,18 +1,71 @@
 .sidebar {
-  width: 240px;
-  height: 100%;
-  background: #1e3a8a;
-  color: white;
-  padding: 16px;
+  width: 260px;
+  height: 100vh;
+  background: #0f172a; /* azul escuro elegante */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
-a {
-  display: block;
-  padding: 8px;
-  color: white;
+.sidebar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+.sidebar__logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.sidebar__menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar__menu a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.sidebar__menu a.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-left: 3px solid #38bdf8;
+}
+
+.sidebar__footer {
+  margin-top: auto; /* 🔥 cola no final */
+}
+
+.sidebar__footer a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #cbd5f5;
   text-decoration: none;
 }
 
-a.active {
-  background: rgba(255, 255, 255, 0.2);
+.sidebar__footer a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
 }
