@@ -1,0 +1,11 @@
+<aside class="sidebar">
+  <div class="sidebar__logo">HED</div>
+
+  <nav>
+    @for (item of menuItems; track item.link) {
+      <a [routerLink]="item.link" routerLinkActive="active">
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</aside>
