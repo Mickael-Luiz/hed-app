@@ -1,11 +1,30 @@
 <aside class="sidebar">
-  <div class="sidebar__logo">HED</div>
+  <div class="sidebar__logo">
+    <img src="images/logos/hed-white-logo.png">
+  </div>
 
-  <nav>
+  <!-- MENU PRINCIPAL -->
+  <nav class="sidebar__menu">
     @for (item of menuItems; track item.link) {
-      <a [routerLink]="item.link" routerLinkActive="active">
+      <a
+        [routerLink]="item.link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <app-icon [name]="item.icon"></app-icon>
         {{ item.label }}
       </a>
     }
   </nav>
+
+  <!-- RODAPÉ -->
+  <div class="sidebar__footer">
+    <a
+      [routerLink]="'/configuracoes'"
+      routerLinkActive="active"
+    >
+      <app-icon [name]="'settings'"></app-icon>
+      Configurações
+    </a>
+  </div>
 </aside>
