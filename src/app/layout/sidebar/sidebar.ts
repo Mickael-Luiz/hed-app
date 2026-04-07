@@ -23,7 +23,7 @@ export class Sidebar {
 
   menuItems: IMenu[] = [
     { label: 'Home', link: '/', icon: 'house' },
-    { label: 'Cursos', link: '/cursos', icon: 'courses' },
+    { label: 'Cursos', link: '/courses', icon: 'courses' },
     { label: 'Disciplinas', link: '/disciplinas', icon: 'disciplines' },
     { label: 'Conteúdos', link: '/conteudos', icon: 'contents' },
     { label: 'Eventos', link: '/eventos', icon: 'events' },
