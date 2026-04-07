@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ContextStore } from '../../core/state/context/context.store';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home {
+
+  constructor(public context: ContextStore, private auth: AuthService){}
+
+  changeInstitution() {
+    this.auth.setInstitution()
+  }
+
+}

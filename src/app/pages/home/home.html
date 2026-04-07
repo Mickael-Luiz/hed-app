@@ -1,1 +1,5 @@
-<p>home works!</p>
+<b>
+  Usuário: {{ context.user()?.nome }} <br>
+  Instituto: {{ context.institution()?.nome }}
+</b> <br>
+<button (click)="changeInstitution()">Alterar Faculdade</button>
