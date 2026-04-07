@@ -1,5 +1,5 @@
 import { Injectable, signal } from "@angular/core";
-import { IUser } from "../../../shared/interfaces/IUser";
+import { IUser } from "../../../shared/interfaces/user.interface";
 
 @Injectable({ providedIn: 'root' })
 export class ContextStore {
