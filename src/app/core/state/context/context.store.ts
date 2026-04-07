@@ -10,7 +10,7 @@ export class ContextStore {
   context = this._context.asReadonly();
 
   user = computed(() => this._context()?.user ?? null);
-  intitution = computed(() => this._context()?.institution ?? null);
+  institution = computed(() => this._context()?.institution ?? null);
   role = computed(() => this._context()?.role ?? null);
 
   setContext(ctx: IActiveContext) {
