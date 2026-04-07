@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContextStore } from '../../core/state/context/context.store';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home {
+
+  constructor(public context: ContextStore){}
+
+}

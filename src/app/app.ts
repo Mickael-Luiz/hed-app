@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { IActiveContext } from './shared/interfaces/active-context.interface';
+import { ContextStore } from './core/state/context/context.store';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,11 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('hed-app');
+  
+  constructor(private context: ContextStore) {}
+
+  ngOnInit() {
+    this.context.loadFromStorage();
+  }
+
 }
