@@ -17,8 +17,13 @@ export const routes: Routes = [
         path: '',
         loadComponent: () => import('./pages/home/home').then(m => m.Home),
         canActivate: [authGuard],
+      },
+      {
+        path: 'courses',
+        loadComponent: () => import('./pages/courses/courses').then(m => m.Courses),
+        canActivate: [authGuard],
         data: {
-          roles: [RoleEnum.ADMIN]
+          roles: [RoleEnum.ADMIN, RoleEnum.ALUNO, RoleEnum.COORDENADOR]
         }
       }
     ]
