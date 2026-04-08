@@ -12,8 +12,8 @@ export class Home {
 
   constructor(public context: ContextStore, private auth: AuthService){}
 
-  changeInstitution() {
-    this.auth.setInstitution()
+  changeContext() {
+    this.auth.changeContext()
   }
 
 }

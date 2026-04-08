@@ -9,7 +9,7 @@ export class AuthService {
 
   fakeResponse = {
     user: {
-      id:  '1',
+      id: '1',
       nome: 'Mickael',
       email: 'teste@email.com',
       cpf: '05233662132'
@@ -20,7 +20,7 @@ export class AuthService {
     ]
   }
 
-  constructor(private context: ContextStore) {}
+  constructor(private context: ContextStore) { }
 
   loginFake() {
 
@@ -32,14 +32,26 @@ export class AuthService {
 
   }
 
-  setInstitution() {
-    if(this.context.institution()?.id == '1') {
-      this.context.setInstitution(this.fakeResponse.institutions[1]);
+  changeContext() {
+    if (this.context.institution()?.id == '1') {
+
+      const ctx = {
+        user: this.fakeResponse.user,
+        institution: this.fakeResponse.institutions[1],
+        role: RoleEnum.ALUNO
+      }
+
+      this.context.setContext(ctx);
       return;
     }
-    if(this.context.institution()?.id == '2') {
-      this.context.setInstitution(this.fakeResponse.institutions[0]);
-      return;
+
+    if (this.context.institution()?.id == '2') {
+      
+      this.context.setContext({
+        user: this.fakeResponse.user,
+        institution: this.fakeResponse.institutions[0],
+        role: RoleEnum.ADMIN
+      })
     }
   }
 
