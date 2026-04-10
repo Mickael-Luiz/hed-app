@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IActiveContext } from './shared/interfaces/active-context.interface';
+import { IActiveContext } from './core/interfaces/active-context.interface';
 import { ContextStore } from './core/state/context/context.store';
 
 @Component({

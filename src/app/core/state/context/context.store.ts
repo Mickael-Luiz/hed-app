@@ -1,7 +1,7 @@
 import { computed, Injectable, signal } from "@angular/core";
-import { IUser } from "../../domain/user.interface";
-import { IActiveContext } from "../../../shared/interfaces/active-context.interface";
-import { IInstitution } from "../../domain/institution.interface";
+import { IUser } from "../../interfaces/user.interface";
+import { IActiveContext } from "../../interfaces/active-context.interface";
+import { IInstitution } from "../../interfaces/institution.interface";
 
 @Injectable({ providedIn: 'root' })
 export class ContextStore {
@@ -10,21 +10,27 @@ export class ContextStore {
   context = this._context.asReadonly();
 
   user = computed(() => this._context()?.user ?? null);
-  institution = computed(() => this._context()?.institution ?? null);
-  role = computed(() => this._context()?.role ?? null);
+  activeInstitution = computed(() => this._context()?.activeInstitution ?? null);
+  institutions = computed(() => this._context()?.institutions ?? []);
 
   setContext(ctx: IActiveContext) {
     this._context.set(ctx);
     this.persist(ctx);
   }
 
-  setInstitution(institution: IInstitution) {
+  setActiveInstitution(institutionId: string) {
+
     const current = this._context();
+    
     if(!current) return;
+
+    const found = current.institutions.find(i => i.institution.id == institutionId);
+
+    if (!found) return;
 
     this.setContext({
       ...current,
-      institution
+      activeInstitution: found
     });
   }
 

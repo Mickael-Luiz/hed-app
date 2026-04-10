@@ -1,5 +1,11 @@
 <header class="header">
-  <div>HED</div>
+  <select (change)="changeActiveInstitution($event)">
+    @for(i of context.institutions(); track i.institution.id) {
+      <option [value]="i.institution.id">
+        {{ i.institution.nome }}
+      </option>
+    }
+  </select>
 
   <div class="header__actions">
     <button>🔔</button>

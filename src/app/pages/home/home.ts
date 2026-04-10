@@ -12,8 +12,4 @@ export class Home {
 
   constructor(public context: ContextStore, private auth: AuthService){}
 
-  changeContext() {
-    this.auth.changeContext()
-  }
-
 }

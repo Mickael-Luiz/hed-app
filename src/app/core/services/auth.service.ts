@@ -15,8 +15,14 @@ export class AuthService {
       cpf: '05233662132'
     },
     institutions: [
-      { id: '1', nome: 'Faculdade A', cnpj: '53.704.095/0001-90' },
-      { id: '2', nome: 'Faculdade B', cnpj: '09.128.533/0001-28' }
+      {
+        institution: { id: '1', nome: 'Faculdade Manopla', cnpj: '53.704.095/0001-90' },
+        role: 'ADMIN' as RoleEnum
+      },
+      {
+        institution: { id: '2', nome: 'Faculdade Pegasus', cnpj: '09.128.533/0001-28'},
+        role: 'AUNO' as RoleEnum
+      }
     ]
   }
 
@@ -26,33 +32,10 @@ export class AuthService {
 
     this.context.setContext({
       user: this.fakeResponse.user,
-      institution: this.fakeResponse.institutions[0],
-      role: RoleEnum.ADMIN
-    })
+      institutions: this.fakeResponse.institutions,
+      activeInstitution: this.fakeResponse.institutions[0]
+    });
 
-  }
-
-  changeContext() {
-    if (this.context.institution()?.id == '1') {
-
-      const ctx = {
-        user: this.fakeResponse.user,
-        institution: this.fakeResponse.institutions[1],
-        role: RoleEnum.ALUNO
-      }
-
-      this.context.setContext(ctx);
-      return;
-    }
-
-    if (this.context.institution()?.id == '2') {
-      
-      this.context.setContext({
-        user: this.fakeResponse.user,
-        institution: this.fakeResponse.institutions[0],
-        role: RoleEnum.ADMIN
-      })
-    }
   }
 
   logout() {

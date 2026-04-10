@@ -1,4 +1,5 @@
-@switch (context.role()) {
+@switch (context.activeInstitution()?.role) {
+  
   @case (role.ADMIN) {
     <b> ADMIN </b>
   }
