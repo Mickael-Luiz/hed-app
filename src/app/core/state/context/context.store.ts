@@ -1,7 +1,5 @@
 import { computed, Injectable, signal } from "@angular/core";
-import { IUser } from "../../interfaces/user.interface";
 import { IActiveContext } from "../../interfaces/active-context.interface";
-import { IInstitution } from "../../interfaces/institution.interface";
 
 @Injectable({ providedIn: 'root' })
 export class ContextStore {
@@ -12,6 +10,10 @@ export class ContextStore {
   user = computed(() => this._context()?.user ?? null);
   activeInstitution = computed(() => this._context()?.activeInstitution ?? null);
   institutions = computed(() => this._context()?.institutions ?? []);
+
+  isAdmin = computed(() => this.activeInstitution()?.role === 'ADMIN');
+  isCoordenador = computed(() => this.activeInstitution()?.role === 'COORDENADOR');
+  isAluno = computed(() => this.activeInstitution()?.role === 'ALUNO');
 
   setContext(ctx: IActiveContext) {
     this._context.set(ctx);

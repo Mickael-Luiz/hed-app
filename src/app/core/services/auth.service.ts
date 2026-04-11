@@ -10,7 +10,7 @@ export class AuthService {
   fakeResponse = {
     user: {
       id: '1',
-      nome: 'Mickael',
+      nome: 'Mickael Luiz',
       email: 'teste@email.com',
       cpf: '05233662132'
     },

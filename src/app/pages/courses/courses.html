@@ -1,10 +1,6 @@
-@switch (context.activeInstitution()?.role) {
-  
-  @case (role.ADMIN) {
-    <b> ADMIN </b>
-  }
-  @case (role.ALUNO) {
-    <b> ALUNO </b>
-  }
-  
+@if (context.isAdmin()) {
+<b> ADMIN </b>
+}
+@if (context.isAluno()) {
+<b> ALUNO </b>
 }
