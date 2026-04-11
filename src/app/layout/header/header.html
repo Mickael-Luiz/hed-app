@@ -1,14 +1,28 @@
 <header class="header">
-  <select (change)="changeActiveInstitution($event)">
-    @for(i of context.institutions(); track i.institution.id) {
-      <option [value]="i.institution.id">
-        {{ i.institution.nome }}
-      </option>
-    }
-  </select>
 
-  <div class="header__actions">
-    <button>🔔</button>
-    <button>👤</button>
+  <!-- ESQUERDA -->
+  <div class="header__left">
+    <p-select [options]="context.institutions()" optionLabel="institution.nome" optionValue="institution.id"
+      placeholder="Select a City" class="w-full md:w-56" [checkmark]="true" (onChange)="changeActiveInstitution($event.value)"/>
   </div>
+
+  <!-- DIREITA -->
+  <div class="header__right">
+
+    <!-- BUSCA -->
+    <div class="search">
+      <input type="text" placeholder="Buscar..." />
+    </div>
+
+    <!-- AÇÕES -->
+    <button class="icon-btn">🔔</button>
+    <button class="icon-btn">✉️</button>
+
+    <!-- PERFIL -->
+    <div class="avatar">
+      {{ getInitials() }}
+    </div>
+
+  </div>
+
 </header>
