@@ -56,3 +56,31 @@ h6,
 p {
   margin: 0;
 }
+
+/* =========================================
+   FOCO GLOBAL - PRIME NG
+========================================= */
+
+/* Elementos básicos */
+.p-inputtext:focus,
+.p-inputtext.p-focus,
+.p-select:focus,
+.p-select.p-focus,
+.p-dropdown:focus,
+.p-dropdown.p-focus,
+.p-multiselect:focus,
+.p-multiselect.p-focus,
+.p-inputnumber:focus,
+.p-inputnumber.p-focus,
+.p-password:focus,
+.p-password.p-focus,
+.p-calendar:focus,
+.p-calendar.p-focus {
+  outline: none;
+
+  /* 👇 borda */
+  border-color: #6C5CE7 !important;
+
+  /* 👇 foco visual (mais importante que border) */
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.25) !important;
+}

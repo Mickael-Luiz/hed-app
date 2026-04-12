@@ -3,7 +3,7 @@
   <!-- ESQUERDA -->
   <div class="header__left">
     <p-select [options]="context.institutions()" optionLabel="institution.nome" optionValue="institution.id"
-      placeholder="Select a City" class="w-full md:w-56" [checkmark]="true" (onChange)="changeActiveInstitution($event.value)"/>
+      placeholder="Selecione uma faculdade" class="w-full md:w-56" [checkmark]="true" (onChange)="changeActiveInstitution($event.value)"/>
   </div>
 
   <!-- DIREITA -->
@@ -11,7 +11,7 @@
 
     <!-- BUSCA -->
     <div class="search">
-      <input type="text" placeholder="Buscar..." />
+      <input pInputText class="p-inputtext" placeholder="Buscar..."/>
     </div>
 
     <!-- AÇÕES -->
@@ -19,9 +19,7 @@
     <button class="icon-btn">✉️</button>
 
     <!-- PERFIL -->
-    <div class="avatar">
-      {{ getInitials() }}
-    </div>
+    <p-avatar [label]="getInitials()" class="mr-2" />
 
   </div>
 
