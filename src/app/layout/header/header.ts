@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { ContextStore } from '../../core/state/context/context.store';
-import { Select } from 'primeng/select';
+import { SelectModule } from 'primeng/select';
+import { InputTextModule } from 'primeng/inputtext';
+import { AvatarModule } from 'primeng/avatar';
 
 @Component({
   selector: 'app-header',
   imports: [
-    Select
+    SelectModule,
+    InputTextModule,
+    AvatarModule
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
